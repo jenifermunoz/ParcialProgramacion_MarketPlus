@@ -137,8 +137,8 @@ public class Aplicacion {
                         tieneCompras = true;
                     }
 
-                    if (tieneCompras = false); {
-                        System.out.println("El cliente no tiene compras registradas.");
+                    if (tieneCompras = true); {
+                        System.out.println("El cliente tiene compras registradas.");
                     }
                 } else {
                     System.out.println("Cliente no encontrado.");
@@ -161,7 +161,8 @@ public class Aplicacion {
         System.out.print("Cantidad en inventario: ");
         int cantProd = sc.nextInt();
         sc.nextLine();
-        System.out.println("elija la categoria /n1.ALIMENTOS\n" +
+        System.out.println("elija la categoria \n  " +
+                "   1.ALIMENTOS\n" +
                 "    2.BEBIDAS\n" +
                 "    3.PRODUCTOS_ASEO\n" +
                 "    4.CUIDADO_PERSONAL\n");
@@ -208,7 +209,7 @@ public class Aplicacion {
 
                     if (prodDisponibles != null) {
                         if (prodDisponibles.verificarDisponibilidad(cantReq)) {
-                            System.out.println("Disponible (" + prodDisponibles.getCantidadDisponible() );
+                            System.out.println("Disponible " + prodDisponibles.getCantidadDisponible() + " unidades " );
                         } else {
                             System.out.println("Stock insuficiente (" + prodDisponibles.getCantidadDisponible() + " unidades disponibles).");
                         }
@@ -278,6 +279,7 @@ public class Aplicacion {
                     break;
 
                 case 12:
+                    System.out.println("\n------ Consultar Ventas por fecha ----");
                     System.out.print("Ingrese el año: ");
                     int ano = sc.nextInt();
 
