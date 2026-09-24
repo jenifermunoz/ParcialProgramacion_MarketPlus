@@ -6,12 +6,16 @@ public class Producto {
     private double precioUnitario;
     private int cantidadDisponible;
 
+    // Relación de Producto con categoria
+    private Categoria categoria;
+
     //Constructor
-    public Producto(String codigo, String nombre, double precioUnitario, int cantidadDisponible) {
+    public Producto(String codigo, String nombre, double precioUnitario, int cantidadDisponible, Categoria categoria) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precioUnitario = precioUnitario;
         this.cantidadDisponible = cantidadDisponible;
+        this.categoria = categoria;
     }
 
     //Getters y Setters
@@ -47,12 +51,21 @@ public class Producto {
         this.cantidadDisponible = cantidadDisponible;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
         return "Producto" +
                 "codigo= " + codigo +
                 ", nombre= " + nombre +
                 ", precioUnitario= " + precioUnitario +
-                ", cantidadDisponible= " + cantidadDisponible;
+                ", cantidadDisponible= " + cantidadDisponible +
+                ", Categoria= " + categoria;
     }
 }
