@@ -48,7 +48,29 @@ public class Supermercado {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+    public ArrayList<Cliente> getListaClientes() {
+        return (ArrayList<Cliente>) listaClientes;
+    }
 
+    public void setListaClientes(ArrayList<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
+    }
+
+    public ArrayList<Producto> getListaProductos() {
+        return (ArrayList<Producto>) listaProductos;
+    }
+
+    public void setListaProductos(ArrayList<Producto> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
+
+    public ArrayList<Compra> getListaCompras() {
+        return (ArrayList<Compra>) listaCompras;
+    }
+
+    public void setListaCompras(ArrayList<Compra> listaCompras) {
+        this.listaCompras = listaCompras;
+    }
     @Override
     public String toString() {
         return "Supermercado" +
