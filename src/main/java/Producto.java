@@ -68,4 +68,25 @@ public class Producto {
                 ", cantidadDisponible= " + cantidadDisponible +
                 ", Categoria= " + categoria;
     }
+
+    // metodo para verificar disponibilidad
+    public boolean verificarDisponibilidad(int cantidadRequerida) {
+        boolean disponible = false;
+        if (this.cantidadDisponible >= cantidadRequerida) {
+            disponible = true;
+
+        }
+        return disponible;
+    }
+
+    // metodo para actualizar la Cantidad
+    public void actualizarCantidad(int actualizacion) {
+        if (this.cantidadDisponible + actualizacion >= 0) {
+            this.cantidadDisponible += actualizacion;
+
+        } else {
+            System.out.print("error");
+
+        }
+    }
 }
