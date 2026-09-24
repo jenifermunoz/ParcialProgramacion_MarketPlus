@@ -55,4 +55,6 @@ public class Cliente {
                 ", telefono= " + telefono +
                 ", correo= " + correo;
     }
+    // metodo para realizar compra
+
 }
