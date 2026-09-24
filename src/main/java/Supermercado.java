@@ -6,16 +6,19 @@ public class Supermercado {
     private String nombreComercial;
     private String direccion;
     private String telefono;
+
 //creacion listas
-private List<Cliente> listaClientes;
+    private List<Cliente> listaClientes;
     private List<Producto> listaProductos;
     private List<Compra> listaCompras;
+
     //Constructor
     public Supermercado(String nombreComercial, String direccion, String telefono) {
         this.nombreComercial = nombreComercial;
         this.direccion = direccion;
         this.telefono = telefono;
-//inicializar listas
+
+    //inicializar listas
         listaClientes = new ArrayList<>();
         listaProductos = new ArrayList<>();
         listaCompras = new ArrayList<>();
@@ -54,33 +57,33 @@ private List<Cliente> listaClientes;
                 ", telefono= " + telefono;
     }
     // metodo para registrar cliente
-public boolean registrarCliente (Cliente cliente){
-boolean agregar = false;
-if (cliente != null){
-listaClientes.add(cliente);
-agregar = true;
-}
-return agregar;
-}
-// metodo para registrar producto
-public boolean registrarProducto (Producto producto){
+    public boolean registrarCliente (Cliente cliente){
     boolean agregar = false;
-    if (producto != null){
-        listaProductos.add(producto);
-        agregar = true;
+    if (cliente != null){
+    listaClientes.add(cliente);
+    agregar = true;
     }
     return agregar;
-}
-//metoodo registrar compra
-public boolean registrarCliente(Compra compra){
-    boolean agregar = false;
-    if (compra != null){
-        listaCompras.add(compra);
-        agregar = true;
     }
-    return agregar;
-}
-// consultarVentasPorFecha
+    // metodo para registrar producto
+    public boolean registrarProducto (Producto producto){
+        boolean agregar = false;
+        if (producto != null){
+            listaProductos.add(producto);
+            agregar = true;
+        }
+        return agregar;
+    }
+    //metoodo registrar compra
+    public boolean registrarCompra(Compra compra){
+        boolean agregar = false;
+        if (compra != null){
+            listaCompras.add(compra);
+            agregar = true;
+        }
+        return agregar;
+    }
+    // consultarVentasPorFecha
     public double consultarVentasPorFecha(LocalDate fecha) {
         double totalVentas = 0.0;
         for (Compra compra : listaCompras) {

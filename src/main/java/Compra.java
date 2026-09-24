@@ -87,4 +87,40 @@ public class Compra {
                 ", valorTotal= " + valorTotal +
                 ", Metodo de pago= " + metodoPago;
     }
+
+    //Metodo agregar producto
+    public boolean agregarProducto(Producto producto, int cantidad) {
+        boolean agregado = false;
+
+        if (producto != null && producto.verificarDisponibilidad(cantidad)) {
+            listaProductos.add(producto);
+            listacantidadesCompradas.add(cantidad);
+            agregado = true;
+        }
+
+        return agregado;
+    }
+
+     // Metodo calcular total
+    public double calcularTotal (){
+        double total = 0;
+
+        for (int i = 0; i < listaProductos.size(); i++) {
+            total += listaProductos.get(i).getPrecioUnitario()
+                    * listacantidadesCompradas.get(i);
+        }
+
+        return total;
+    }
+
+    // Metodo confirmar compra
+    public void confirmarCompra() {
+        for (int i = 0; i < listaProductos.size(); i++) {
+            listaProductos.get(i).actualizarCantidad(-listacantidadesCompradas.get(i));
+        }
+
+        valorTotal = calcularTotal();
+        System.out.println("Compra confirmada correctamente.");
+    }
+
 }
